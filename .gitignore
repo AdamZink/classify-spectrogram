@@ -2,6 +2,7 @@
 # Ignore directories with spectrogram images
 training_images/
 test_images/
+test_audio/
 
 
 # Byte-compiled / optimized / DLL files

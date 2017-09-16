@@ -1,0 +1,21 @@
+Install Anaconda:
+https://www.tensorflow.org/install/install_windows#installing_with_anaconda
+
+
+Install tensorflow:
+conda create -n tensorflow python=3.6
+activate tensorflow
+(tensorflow) C:\git\classify-spectrogram> pip install --ignore-installed --upgrade tensorflow 
+
+
+Install scipy:
+conda install scipy
+
+
+Install opencv:
+http://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv
+Download opencv_python-3.3.0+contrib-cp36-cp36m-win_amd64.whl
+(tensorflow) C:\git\classify-spectrogram> pip install C:\Downloads\opencv_python-3.3.0+contrib-cp36-cp36m-win_amd64.whl
+	Processing c:\downloads\opencv_python-3.3.0+contrib-cp36-cp36m-win_amd64.whl
+	Installing collected packages: opencv-python
+	Successfully installed opencv-python-3.3.0+contrib

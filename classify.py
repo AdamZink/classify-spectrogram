@@ -92,8 +92,8 @@ l1_distance_modified = tf.abs(tf.add(training_notes_pl, tf.negative(test_masked)
 
 distance = tf.reduce_sum(l1_distance_modified, axis=1)
 
-max = tf.arg_max(distance, 0)
-min = tf.arg_min(distance, 0)
+max = tf.argmax(distance, 0)
+min = tf.argmin(distance, 0)
 skewed_average = distance[min] + ((distance[max] - distance[min]) / tf.constant(1.0 / thresholdFromMinimum, dtype=tf.float32))
 
 
