@@ -1,4 +1,4 @@
-### classify-spectrogram
+## classify-spectrogram
 
 #### Requirements
 
@@ -17,6 +17,7 @@ Generate training data: `python generateTrainingImages.py`
 
 Run the analysis program: `python classify.py`
 
+<br />
 
 #### Sample Output
 
