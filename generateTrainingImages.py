@@ -1,6 +1,7 @@
 
 # Generate audio as numpy array and then write wav file 
 
+import os
 import numpy as np
 import scipy.io.wavfile as wf
 import scipy.signal as sig
@@ -37,6 +38,15 @@ frequencyDict = {
 }
 
 
+trainingAudioRelativeDir = 'training_audio'
+trainingImagesRelativeDir = 'training_images'
+testImagesRelativeDir = 'test_images'
+
+os.makedirs(os.path.join(os.getcwd(), trainingAudioRelativeDir), exist_ok=True)
+os.makedirs(os.path.join(os.getcwd(), trainingImagesRelativeDir), exist_ok=True)
+os.makedirs(os.path.join(os.getcwd(), testImagesRelativeDir), exist_ok=True)
+
+
 for frequencyLabel, frequency in frequencyDict.items():
 	print(frequencyLabel + ' - ' + str(frequency))
 
@@ -56,12 +66,12 @@ for frequencyLabel, frequency in frequencyDict.items():
 	mySignal = normalizeForWav(mySignal)
 	print(mySignal)
 
-	filename = 'test_audio/sin_' + str(frequencyLabel) + '.wav'
+	filename = os.path.join(trainingAudioRelativeDir, 'sin_' + str(frequencyLabel) + '.wav')
 	wf.write(filename, samplesPerSecond, mySignal)
 	print('Wrote ' + filename)
 	
 	
-	command = 'sox ' + filename + ' -n rate 6k spectrogram -m -r -X ' + str(specWidth) + ' -y ' + str(specHeight) + ' -z 80 -o training_images/sin_' + str(frequencyLabel) + '.png'
+	command = 'sox ' + filename + ' -n rate 6k spectrogram -m -r -X ' + str(specWidth) + ' -y ' + str(specHeight) + ' -z 80 -o ' + os.path.join(trainingImagesRelativeDir, 'sin_' + str(frequencyLabel) + '.png')
 	subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
 	print('Wrote training spectrogram')
 
