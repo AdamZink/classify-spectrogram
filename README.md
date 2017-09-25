@@ -1,29 +1,26 @@
-# classify-spectrogram
+### classify-spectrogram
 
-Requirements - see windows install notes for more details
+#### Requirements
 
-tensorflow
+* tensorflow
+* scipy
+* numpy
+* cv2 (opencv3)
 
-scipy
+See windows install notes for more details
 
-numpy
+<br />
 
-cv2 (opencv3)
+#### Commands
+
+Generate training data: `python generateTrainingImages.py`
+
+Run the analysis program: `python classify.py`
 
 
-Command to generate training data: `python generateTrainingImages.py`
+#### Sample Output
 
-Command to run the analysis program: `python classify.py`
-
-
-Sample analysis output:
-
---- Results ---
-
-Slice 1 - Prediction: ['A4', 'C4', 'E4']
-
-Slice 2 - Prediction: ['A4', 'C5', 'F4']
-
-Slice 3 - Prediction: ['B4', 'D4', 'G4']
-
-Slice 4 - Prediction: ['C5', 'E4', 'G4']
+> Slice 1 - Prediction: ['A4', 'C4', 'E4']  
+> Slice 2 - Prediction: ['A4', 'C5', 'F4']  
+> Slice 3 - Prediction: ['B4', 'D4', 'G4']  
+> Slice 4 - Prediction: ['C5', 'E4', 'G4']
